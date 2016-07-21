@@ -1,0 +1,1 @@
+The bare minimum boilerplate of react and redux app.
