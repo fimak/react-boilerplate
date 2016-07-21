@@ -18,6 +18,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint'],
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         loaders: ['react-hot', 'babel-loader'],
