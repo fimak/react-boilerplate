@@ -1,9 +1,9 @@
 const initialState = {
   name: 'Aleksander',
-  surname: 'Uf',
+  surname: 'Ufimtsev',
   age: 27
 }
 
-export default function userstate(state = initialState) {
-  return state
+export default function userstate() {
+  return initialState
 }
