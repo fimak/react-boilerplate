@@ -9,11 +9,11 @@ import '../style/app.css'
 class App extends Component {
   render() {
     const { user, page } = this.props
-    const { setYear } = this.props.pageActions
+    const { getPhotos } = this.props.pageActions
 
     return <div className='app'>
       <User name={user.name} />
-      <Page photos={page.photos} year={page.year} setYear={setYear} />
+      <Page photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching} />
     </div>
   }
 }

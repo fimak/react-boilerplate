@@ -3,15 +3,16 @@ import React, { Component, PropTypes } from 'react'
 export default class Page extends Component {
     static PropTypes = {
         year: PropTypes.number.isRequired,
-        photos: PropTypes.array.isRequired
+        photos: PropTypes.array.isRequired,
+        getPhotos: PropTypes.func.isRequired
     }
 
     btnClick = (e) => {
-        this.props.setYear(+e.target.textContent)
+        this.props.getPhotos(+e.target.textContent)
     }
 
     render() {
-        const { year, photos } = this.props
+        const { year, photos, fetching } = this.props
 
         return (
             <div>
@@ -21,7 +22,11 @@ export default class Page extends Component {
                     <button onClick={this.btnClick}>2014</button>
                 </p>
                 <h3>{year} year</h3>
-                <p>Photos count: {photos.length}.</p>
+                {
+                    fetching ?
+                    <p>loading...</p> :
+                    <p>Photos count: {photos.length}.</p>
+                }
             </div>
         )
     }
