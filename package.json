@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "my react boilerplate",
   "main": "index.js",
   "scripts": {
@@ -34,9 +34,11 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
@@ -44,11 +46,15 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
     "eslint-plugin-react": "^5.2.2",
     "express": "^4.14.0",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
     "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.1"
