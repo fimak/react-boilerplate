@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import User from '../components/user'
 import Page from '../components/page'
-import * as pageActions from '../actions/page'
+import { getPhotos } from '../redux/modules/page'
 import '../style/app.css'
 
 class App extends Component {
@@ -27,7 +27,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        pageActions: bindActionCreators(pageActions, dispatch)
+        pageActions: bindActionCreators({getPhotos}, dispatch)
     }
 }
 

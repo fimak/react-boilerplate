@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from '../reducers'
+import rootReducer from './rootReducer'
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk'
 
@@ -12,8 +12,8 @@ export default function configureStore(initialState) {
     )
 
     if (module.hot) {
-        module.hot.accept('../reducers', () => {
-            const nextRootReducer = require('../reducers').default
+        module.hot.accept('./rootReducer', () => {
+            const nextRootReducer = require('./rootReducer').default
             store.replaceReducer(nextRootReducer)
         })
     }
