@@ -15,6 +15,11 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -22,15 +27,15 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loaders: ['eslint'],
         exclude: /node_modules/
       }
     ],
     loaders: [
       {
+        test: /\.jsx?$/,
         loaders: ['react-hot', 'babel-loader'],
-        test: /\.js$/,
         exclude: /node_modules/,
         plugins: ['transform-runtime'],
       },
