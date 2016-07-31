@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import User from '../components/user'
 import Page from '../components/page'
+import SomeForm from '../components/someform'
 import { getPhotos } from '../redux/modules/page'
 import '../style/app.css'
 
@@ -11,10 +12,13 @@ class App extends Component {
     const { user, page } = this.props
     const { getPhotos } = this.props.pageActions
 
-    return <div className='app'>
-      <User name={user.name} />
-      <Page photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching} />
-    </div>
+    return (
+      <div className='app'>
+        <User name={user.name} />
+        <Page photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching} />
+        <SomeForm name={user.name} />
+      </div>
+    )
   }
 }
 
